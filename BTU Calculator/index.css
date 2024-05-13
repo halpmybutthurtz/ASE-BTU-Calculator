@@ -1,0 +1,89 @@
+body {
+    background-size: cover;
+    margin: 0, auto;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.main {
+    max-width: 700px;
+    margin: auto;
+    background-color: lightgrey;
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+
+#header-qty {
+    margin-left: 60px;
+}
+
+
+p.headers {
+    font-size: 12px;
+    text-transform: uppercase;
+    width: 100px;
+    height: 15px;
+    margin: 5px;
+    text-align: right;
+    align-content: flex-end;
+  }
+
+#voltage-btns {
+    display: block;
+    margin-bottom: 30px;
+    margin-left: 50px;
+}
+
+#voltage-btns input[type="radio"] {
+    display: none;
+  }
+  
+#voltage-btns span {
+    padding: 10px;
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: grey;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    color: white;
+  }
+
+#voltage-btns span:hover {
+    background: orange;
+    transition: 0.2s;
+  }
+  
+#voltage-btns input[type="radio"]:checked + span {
+    transition: 0.2s;
+    background-color: orangered;
+    color: white;
+  }
+
+label.qty {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+
+input[type="number"] {
+    display: inline-block;
+    text-align: right;
+    width: 50px;
+    height: 30px;
+    margin: 5px;
+    border: none;
+    border-radius: 3px;
+    background: white;
+    padding: auto;
+    outline: none;
+  }
+
+input:read-only {
+    width: 100px;
+}
+
+.containers {
+    display: inline-block;
+    vertical-align: top;
+  }
