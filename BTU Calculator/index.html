@@ -10,28 +10,31 @@
     <div class="main">
         <div id="voltage-btns">
         <p>Select Line Voltage</p>
-            <label><input type="radio" name="v-btns" id="230"><span>230</span></label>
-            <label><input type="radio" name="v-btns" id="220"><span>220</span></label>
-            <label><input type="radio" name="v-btns" id="208"><span>208</span></label>
-            <label><input type="radio" name="v-btns" id="120"><span>120</span></label>
-            <label><input type="radio" name="v-btns" id="115"><span>115</span></label>
-            <label><input type="radio" name="v-btns" id="110"><span>110</span></label>
-            <label><input type="radio" name="v-btns" id="100"><span>100</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(0), altBtuH()" id="230" checked="checked"><span>230</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(1), altBtuH()" id="220"><span>220</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(2), altBtuH()" id="208"><span>208</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(3), altBtuH()" id="120"><span>120</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(4), altBtuH()" id="115"><span>115</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(5), altBtuH()" id="110"><span>110</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(6), altBtuH()" id="100"><span>100</span></label>
         </div>
         <div class="containers" id="quantity">
                 <p class="headers" id="header-qty">Quantity</p>
-            <label class="qty" for="cs119-qty">CS119</label>
-                <input type="number" id="cs119-qty"><br>
-            <label class="qty" for="cs118-qty">CS118</label>
-                <input type="number" id="cs118-qty"><br>
-            <label class="qty" for="cs7-qty">CS7</label>
-                <input type="number" id="cs7-qty"><br>
-            <label class="qty" for="cs10-qty">CS10</label>
-                <input type="number" id="cs10-qty"><br>
-            <label class="qty" for="cs7p-qty">CS7P</label>
-                <input type="number" id="cs7p-qty"><br>
-            <label class="qty" for="cs10p-qty">CS10P</label>
-                <input type="number" id="cs10p-qty"><br>
+            <label class="qty" for="cs119">CS119</label>
+                <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="cs119"><br>
+            <label class="qty" for="cs118">CS118</label>
+                <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="cs118"><br>
+            <label class="qty" for="cs7">CS7</label>
+                <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="cs7"><br>
+            <label class="qty" for="cs10">CS10</label>
+                <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="cs10"><br>
+            <label class="qty" for="cs7p">CS7P</label>
+                <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="cs7p"><br>
+            <label class="qty" for="cs10p">CS10P</label>
+                <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="cs10p"><br>
+            <p id="total">Totals</p><br>
+            <button id="clear-btn" onclick="clearFields()">Clear</button>            
+
         </div>
         <div class="containers">
             <p class="headers">BTU/h @ 25%</p>
