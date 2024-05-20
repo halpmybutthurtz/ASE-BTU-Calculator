@@ -14,12 +14,15 @@ body {
 }
 
 .header {
-  text-align: right;
-  margin-right: 5%;
-  font-size: 30px;
-  font-weight: bolder;
-  color: goldenrod;
-  font-stretch: 80%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 50px;
+}
+
+#header {
+  height: 70%;
+  width: 70%;
 }
 
 
@@ -124,6 +127,9 @@ p.headers {
     text-align: right;
     align-content: flex-end;
   }
+
+#voltage-header{
+}
 
 #voltage-btns {
     display: block;
