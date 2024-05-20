@@ -1,7 +1,7 @@
 body {
     background-size: cover;
-    margin: 0, auto;
-    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Helvetica Neue', 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-width: 700px;
 }
 
 .main {
@@ -13,18 +13,107 @@ body {
     
 }
 
+.header {
+  text-align: right;
+  margin-right: 5%;
+  font-size: 30px;
+  font-weight: bolder;
+  color: goldenrod;
+  font-stretch: 80%;
+}
+
+
+#footer {
+  display: flex;
+  width: 90%;
+  margin-top: 20px;
+
+}
+
+.logo {
+  flex: 1;
+}
+
+#logo {
+  height: 75%;
+  width: 75%;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.table {
+  /*margin-left: 26%;*/
+  flex: 1;
+}
+
+#table-header {
+  margin-left: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  height: 5px;
+  width: 400px;
+}
+
+th {
+  background-color: goldenrod;
+  color: white;
+  padding: 10px 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+td {
+  background-color: gray;
+  padding: 10px 15px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: white;
+}
+
+#caveat {
+  font-size: 10px;
+  font-style: italic;
+  margin-left: 5px;
+}
+
 #header-qty {
-    margin-left: 60px;
+    margin-left: 70px;
+}
+
+#clear-total{
+    padding-top: 12px;
+    margin-left: 40px
 }
 
 #total {
   text-align: right;
-  padding-right: 10px;
+  display: inline;
+  padding-left: 10px;
 }
 
 #clear-btn {
-  margin-left: 110px;
+  display: inline;
+  background-color: goldenrod;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  
+}
 
+#clear-btn:hover {
+  background-color: darkorange;
+  transition: 0.5s;
+}
+
+#clear-btn:active {
+  background-color: darkgoldenrod;
+  transition: 0.2s;
 }
 
 p.headers {
@@ -59,20 +148,33 @@ p.headers {
   }
 
 #voltage-btns span:hover {
-    background: orange;
-    transition: 0.2s;
+    background-color: darkorange;
+    transition: 0.5s;
   }
+
+#voltage-btns span:active {
+  background-color: darkgoldenrod;
+  transition: 0.2s
+}
   
 #voltage-btns input[type="radio"]:checked + span {
     transition: 0.2s;
-    background-color: orangered;
+    background-color: goldenrod;
     color: white;
   }
 
 label.qty {
     display: inline-block;
-    width: 100px;
+    margin-left:40px;
+    width: 60px;
     text-align: right;
+    background: goldenrod;
+    padding:8px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 input[type="number"] {
@@ -80,16 +182,20 @@ input[type="number"] {
     text-align: right;
     width: 50px;
     height: 30px;
-    margin: 5px;
+    margin: 5px 5px 5px 0px;
     border: none;
-    border-radius: 3px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     background: white;
     padding: auto;
     outline: none;
   }
 
 input:read-only {
+    margin: 5px;
     width: 100px;
+    border-radius: 5px;
+
 }
 
 .containers {

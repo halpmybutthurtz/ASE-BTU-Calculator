@@ -5,18 +5,20 @@
     <title>BTU Calculator</title>
     <link rel="stylesheet" href="index.css">
   </head>
-
   <body>
     <div class="main">
+        <div class="header">
+            <p id="header">ADAMSON BTU CALCULATOR</p>
+        </div>
         <div id="voltage-btns">
         <p>Select Line Voltage</p>
-            <label><input type="radio" name="v-btns" onclick="setVoltage(0), altBtuH()" id="230" checked="checked"><span>230</span></label>
-            <label><input type="radio" name="v-btns" onclick="setVoltage(1), altBtuH()" id="220"><span>220</span></label>
-            <label><input type="radio" name="v-btns" onclick="setVoltage(2), altBtuH()" id="208"><span>208</span></label>
-            <label><input type="radio" name="v-btns" onclick="setVoltage(3), altBtuH()" id="120"><span>120</span></label>
-            <label><input type="radio" name="v-btns" onclick="setVoltage(4), altBtuH()" id="115"><span>115</span></label>
-            <label><input type="radio" name="v-btns" onclick="setVoltage(5), altBtuH()" id="110"><span>110</span></label>
-            <label><input type="radio" name="v-btns" onclick="setVoltage(6), altBtuH()" id="100"><span>100</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(0)" id="230" checked="checked"><span>230</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(1)" id="220"><span>220</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(2)" id="208"><span>208</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(3)" id="120"><span>120</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(4)" id="115"><span>115</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(5)" id="110"><span>110</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(6)" id="100"><span>100</span></label>
         </div>
         <div class="containers" id="quantity">
                 <p class="headers" id="header-qty">Quantity</p>
@@ -32,9 +34,10 @@
                 <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="cs7p"><br>
             <label class="qty" for="cs10p">CS10P</label>
                 <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="cs10p"><br>
-            <p id="total">Totals</p><br>
-            <button id="clear-btn" onclick="clearFields()">Clear</button>            
-
+            <div id="clear-total">
+                <button id="clear-btn" onclick="clearFields()">Clear</button>            
+                <p id="total">Totals</p>
+            </div>
         </div>
         <div class="containers">
             <p class="headers">BTU/h @ 25%</p>
@@ -75,6 +78,26 @@
             <input type="number" readonly="readonly" id="cs7p-rms-lt"><br>
             <input type="number" readonly="readonly" id="cs10p-rms-lt"><br>
             <input type="number" readonly="readonly" id="total-rms-lt"><br>
+        </div>
+        <div id="footer">
+            <div class="logo">
+            <img id="logo" src="src/logo.png">
+            </div>
+            <div class="table">
+            <p id="table-header">Devices per Circuit</p>
+            <table>
+                <tr>
+                    <th>CS119</th>
+                    <th>CS118</th>
+                    <th>CS7</th>
+                    <th>CS10</th>
+                    <th>CS7P</th>
+                    <th>CS10P</th>
+                </tr>
+                <tr id="max-values"></tr>
+            </table>
+            <p id="caveat">Maximum quantity at 90% per 16amp circuit at selected line voltage</p>
+            </div>
         </div>
     </div>
   </body>
