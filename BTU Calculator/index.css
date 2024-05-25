@@ -122,14 +122,11 @@ p.headers {
     font-size: 12px;
     text-transform: uppercase;
     width: 100px;
-    height: 15px;
-    margin: 5px;
+    height: 30px;
+    margin: 5px 5px 0px 5px;
     text-align: right;
     align-content: flex-end;
   }
-
-#voltage-header{
-}
 
 #voltage-btns {
     display: block;
@@ -197,6 +194,7 @@ input[type="number"] {
   }
 
 input:read-only {
+    -moz-appearance: textfield;
     margin: 5px;
     width: 100px;
     border-radius: 5px;
