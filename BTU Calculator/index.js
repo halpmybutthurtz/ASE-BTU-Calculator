@@ -82,6 +82,18 @@ let csDevices = [
         btuMax: document.getElementById("cs10p-btu"),
         rmsIdleBox: document.getElementById("cs10p-rms-idle"),
         rmsLongTermBox: document.getElementById("cs10p-rms-lt")
+    },
+    
+    {
+        name: vgt,
+        current: [4.35, 4.55, 4.8, 8.3, 8.69, 9.1, 10],
+        idleCurrent: [0.45, 0.47, 0.5, 0.86, 0.9, 0.96, 1.04],
+        maxQuantity: [3, 3, 3, 1, 1, 1, 1],
+        quantity: document.getElementById("vgt"),
+        btuBox: document.getElementById("vgt-btu25"),
+        btuMax: document.getElementById("vgt-btu"),
+        rmsIdleBox: document.getElementById("vgt-rms-idle"),
+        rmsLongTermBox: document.getElementById("vgt-rms-lt")
     }]
 
 //Voltage and Current Selector
@@ -97,7 +109,7 @@ setVoltage(0)
 
 //Clear Button
 function clearFields() {
-    for (let q = 0; q < 6; q++) {
+    for (let q = 0; q < 7; q++) {
         csDevices[q].quantity.value = 0
     }
     altBtuH()
@@ -106,6 +118,7 @@ function clearFields() {
 //Max Per Circuit
 function getMax() {
     maxPerCircuit.innerHTML = `
+        <td>${csDevices[6].maxQuantity[arraySelector]}</td>
         <td>${csDevices[0].maxQuantity[arraySelector]}</td>
         <td>${csDevices[1].maxQuantity[arraySelector]}</td>
         <td>${csDevices[2].maxQuantity[arraySelector]}</td>
@@ -117,7 +130,7 @@ function getMax() {
 
 //Calculator
 function altBtuH() {
-    for (let b = 0; b < 6; b++) {
+    for (let b = 0; b < 7; b++) {
         let deviceCurrent = csDevices[b].current[arraySelector]
         let deviceQuantity = csDevices[b].quantity.value
         let deviceIdle = csDevices[b].idleCurrent[arraySelector]
@@ -145,7 +158,7 @@ function sum() {
     let totalBtuMax = 0
     let totalRmsIdle = 0
     let totalRmsLongTerm = 0
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 7; i++) {
         totalBtu += (+csDevices[i].btuBox.value)
         totalBtuMax += (+csDevices[i].btuMax.value)
         totalRmsIdle += (+csDevices[i].rmsIdleBox.value)
