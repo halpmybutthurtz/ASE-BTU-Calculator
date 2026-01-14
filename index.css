@@ -1,0 +1,207 @@
+body {
+    background-size: cover;
+    font-family: 'Helvetica Neue', 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-width: 720px;
+}
+
+.main {
+    max-width: 720px;
+    margin: auto;
+    background-color: lightgrey;
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 50px;
+}
+
+#header {
+  height: 70%;
+  width: 70%;
+}
+
+
+#footer {
+  display: flex;
+  width: 90%;
+  margin-top: 20px;
+
+}
+
+.logo {
+  flex: 1;
+}
+
+#logo {
+  height: 63%;
+  width: 75%;
+  margin-left: 10px;
+  margin-top: 23px;
+}
+
+.table {
+  /*margin-left: 26%;*/
+  flex: 1;
+}
+
+#table-header {
+  margin-left: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  height: 5px;
+  width: 400px;
+}
+
+th {
+  background-color: goldenrod;
+  color: white;
+  padding: 10px 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+td {
+  background-color: gray;
+  padding: 10px 15px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: white;
+}
+
+#caveat {
+  font-size: 10px;
+  font-style: italic;
+  margin-left: 5px;
+}
+
+#header-qty {
+    margin-left: 70px;
+}
+
+#clear-total{
+    margin: 5px 0px 5px 55px;
+}
+
+#total {
+  text-align: right;
+  display: inline;
+  padding-left: 10px;
+}
+
+#clear-btn {
+  display: inline;
+  background-color: goldenrod;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  
+}
+
+#clear-btn:hover {
+  background-color: darkorange;
+  transition: 0.5s;
+}
+
+#clear-btn:active {
+  background-color: darkgoldenrod;
+  transition: 0.2s;
+}
+
+p.headers {
+    font-size: 12px;
+    text-transform: uppercase;
+    width: 100px;
+    height: 30px;
+    margin: 5px 5px 0px 5px;
+    text-align: right;
+    align-content: flex-end;
+  }
+
+#voltage-btns {
+    display: block;
+    margin-bottom: 30px;
+    margin-left: 50px;
+}
+
+#voltage-btns input[type="radio"] {
+    display: none;
+  }
+  
+#voltage-btns span {
+    padding: 10px;
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: grey;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    color: white;
+  }
+
+#voltage-btns span:hover {
+    background-color: darkorange;
+    transition: 0.5s;
+  }
+
+#voltage-btns span:active {
+  background-color: darkgoldenrod;
+  transition: 0.2s
+}
+  
+#voltage-btns input[type="radio"]:checked + span {
+    transition: 0.2s;
+    background-color: goldenrod;
+    color: white;
+  }
+
+label.qty {
+    display: inline-block;
+    margin-left:40px;
+    width: 60px;
+    text-align: right;
+    background: goldenrod;
+    padding:8px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    display: inline-block;
+    text-align: right;
+    width: 50px;
+    height: 30px;
+    margin: 5px 5px 5px 0px;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: white;
+    padding: auto;
+    outline: none;
+  }
+
+input:read-only {
+    -moz-appearance: textfield;
+    margin: 5px;
+    width: 100px;
+    border-radius: 5px;
+
+}
+
+.containers {
+    display: inline-block;
+    vertical-align: top;
+  }

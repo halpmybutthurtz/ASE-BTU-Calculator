@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>BTU Calculator</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="main">
+        <div class="header">
+            <img id="header" src="src/HEADERLOGO.png">
+        </div>
+        <div id="voltage-btns">
+            <label>Select Line Voltage</label><br><br>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(0)" id="230" checked="checked"><span>230</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(1)" id="220"><span>220</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(2)" id="208"><span>208</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(3)" id="120"><span>120</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(4)" id="115"><span>115</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(5)" id="110"><span>110</span></label>
+            <label><input type="radio" name="v-btns" onclick="setVoltage(6)" id="100"><span>100</span></label>
+        </div>
+        <div class="containers" id="quantity">
+                <p class="headers" id="header-qty">Quantity</p>
+            <label class="qty" for="vgt">VGt</label>
+                <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="vgt"><br>
+            <label class="qty" for="cs119">CS119</label>
+                <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="cs119"><br>
+            <label class="qty" for="cs118">CS118</label>
+                <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="cs118"><br>
+            <label class="qty" for="cs7">CS7</label>
+                <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="cs7"><br>
+            <label class="qty" for="cs10">CS10</label>
+                <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="cs10"><br>
+            <label class="qty" for="cs7p">CS7P</label>
+                <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="cs7p"><br>
+            <label class="qty" for="cs10p">CS10P</label>
+                <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="cs10p"><br>
+            <div id="clear-total">
+                <button id="clear-btn" onclick="clearFields()">Clear</button>            
+                <p id="total">Totals</p>
+            </div>
+        </div>
+        <div class="containers">
+            <p class="headers">BTU/h @ 25%</p>
+            <input type="number" readonly="readonly" id="vgt-btu25"><br>
+            <input type="number" readonly="readonly" id="cs119-btu25"><br>
+            <input type="number" readonly="readonly" id="cs118-btu25"><br>
+            <input type="number" readonly="readonly" id="cs7-btu25"><br>
+            <input type="number" readonly="readonly" id="cs10-btu25"><br>
+            <input type="number" readonly="readonly" id="cs7p-btu25"><br>
+            <input type="number" readonly="readonly" id="cs10p-btu25"><br>
+            <input type="number" readonly="readonly" id="total-btu25"><br>
+        </div>
+        <div class="containers">
+            <p class="headers">BTU/h</p>
+            <input type="number" readonly="readonly" id="vgt-btu"><br>
+            <input type="number" readonly="readonly" id="cs119-btu"><br>
+            <input type="number" readonly="readonly" id="cs118-btu"><br>
+            <input type="number" readonly="readonly" id="cs7-btu"><br>
+            <input type="number" readonly="readonly" id="cs10-btu"><br>
+            <input type="number" readonly="readonly" id="cs7p-btu"><br>
+            <input type="number" readonly="readonly" id="cs10p-btu"><br>
+            <input type="number" readonly="readonly" id="total-btu"><br>
+        </div>
+        <div class="containers">
+            <p class="headers">RMS Current Idle</p>
+            <input type="number" readonly="readonly" id="vgt-rms-idle"><br>
+            <input type="number" readonly="readonly" id="cs119-rms-idle"><br>
+            <input type="number" readonly="readonly" id="cs118-rms-idle"><br>
+            <input type="number" readonly="readonly" id="cs7-rms-idle"><br>
+            <input type="number" readonly="readonly" id="cs10-rms-idle"><br>
+            <input type="number" readonly="readonly" id="cs7p-rms-idle"><br>
+            <input type="number" readonly="readonly" id="cs10p-rms-idle"><br>
+            <input type="number" readonly="readonly" id="total-rms-idle"><br>
+        </div>
+        <div class="containers">
+            <p class="headers">RMS Current Long Term</p>
+            <input type="number" readonly="readonly" id="vgt-rms-lt"><br>
+            <input type="number" readonly="readonly" id="cs119-rms-lt"><br>
+            <input type="number" readonly="readonly" id="cs118-rms-lt"><br>
+            <input type="number" readonly="readonly" id="cs7-rms-lt"><br>
+            <input type="number" readonly="readonly" id="cs10-rms-lt"><br>
+            <input type="number" readonly="readonly" id="cs7p-rms-lt"><br>
+            <input type="number" readonly="readonly" id="cs10p-rms-lt"><br>
+            <input type="number" readonly="readonly" id="total-rms-lt"><br>
+        </div>
+        <div id="footer">
+            <div class="logo">
+            <img id="logo" src="src/logo.png">
+            </div>
+            <div class="table">
+            <p id="table-header">Devices per Circuit</p>
+            <table>
+                <tr>
+                    <th>VGt</th>
+                    <th>CS119</th>
+                    <th>CS118</th>
+                    <th>CS7</th>
+                    <th>CS10</th>
+                    <th>CS7P</th>
+                    <th>CS10P</th>
+                </tr>
+                <tr id="max-values"></tr>
+            </table>
+            <p id="caveat">Maximum quantity at 208v ~ 230v on 16amp breaker. Maximum quantity at 100v ~ 120v on 20amp breaker.</p>
+            </div>
+        </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
