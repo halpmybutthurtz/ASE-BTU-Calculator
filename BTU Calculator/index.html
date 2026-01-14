@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>BTU Calculator</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="btu.css">
   </head>
   <body>
     <div class="main">
@@ -22,8 +22,12 @@
         </div>
         <div class="containers" id="quantity">
                 <p class="headers" id="header-qty">Quantity</p>
+            <label class="qty" for="vgx">VGx</label>
+                <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="vgx"><br>
             <label class="qty" for="vgt">VGt</label>
                 <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="vgt"><br>
+            <label class="qty" for="vgs">VGs</label>
+                <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="vgs"><br>
             <label class="qty" for="cs119">CS119</label>
                 <input type="number" min="0" onclick="this.select()" oninput="validity.valid||(value=''), altBtuH()" id="cs119"><br>
             <label class="qty" for="cs118">CS118</label>
@@ -43,7 +47,9 @@
         </div>
         <div class="containers">
             <p class="headers">BTU/h @ 25%</p>
+            <input type="number" readonly="readonly" id="vgx-btu25"><br>
             <input type="number" readonly="readonly" id="vgt-btu25"><br>
+            <input type="number" readonly="readonly" id="vgs-btu25"><br>
             <input type="number" readonly="readonly" id="cs119-btu25"><br>
             <input type="number" readonly="readonly" id="cs118-btu25"><br>
             <input type="number" readonly="readonly" id="cs7-btu25"><br>
@@ -54,7 +60,9 @@
         </div>
         <div class="containers">
             <p class="headers">BTU/h</p>
+            <input type="number" readonly="readonly" id="vgx-btu"><br>
             <input type="number" readonly="readonly" id="vgt-btu"><br>
+            <input type="number" readonly="readonly" id="vgs-btu"><br>
             <input type="number" readonly="readonly" id="cs119-btu"><br>
             <input type="number" readonly="readonly" id="cs118-btu"><br>
             <input type="number" readonly="readonly" id="cs7-btu"><br>
@@ -65,7 +73,9 @@
         </div>
         <div class="containers">
             <p class="headers">RMS Current Idle</p>
+            <input type="number" readonly="readonly" id="vgx-rms-idle"><br>
             <input type="number" readonly="readonly" id="vgt-rms-idle"><br>
+            <input type="number" readonly="readonly" id="vgs-rms-idle"><br>
             <input type="number" readonly="readonly" id="cs119-rms-idle"><br>
             <input type="number" readonly="readonly" id="cs118-rms-idle"><br>
             <input type="number" readonly="readonly" id="cs7-rms-idle"><br>
@@ -76,7 +86,9 @@
         </div>
         <div class="containers">
             <p class="headers">RMS Current Long Term</p>
+            <input type="number" readonly="readonly" id="vgx-rms-lt"><br>
             <input type="number" readonly="readonly" id="vgt-rms-lt"><br>
+            <input type="number" readonly="readonly" id="vgs-rms-lt"><br>
             <input type="number" readonly="readonly" id="cs119-rms-lt"><br>
             <input type="number" readonly="readonly" id="cs118-rms-lt"><br>
             <input type="number" readonly="readonly" id="cs7-rms-lt"><br>
@@ -87,13 +99,15 @@
         </div>
         <div id="footer">
             <div class="logo">
-            <img id="logo" src="src/logo.png">
-            </div>
+                <img id="logo" src="src/logo.png">
+                </div>
             <div class="table">
             <p id="table-header">Devices per Circuit</p>
             <table>
                 <tr>
+                    <th>VGx</th>
                     <th>VGt</th>
+                    <th>VGs</th>
                     <th>CS119</th>
                     <th>CS118</th>
                     <th>CS7</th>
@@ -108,5 +122,5 @@
         </div>
     </div>
   </body>
-  <script src="index.js"></script>
+  <script src="btu.js"></script>
 </html>

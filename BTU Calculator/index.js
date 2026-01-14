@@ -14,7 +14,7 @@ let csDevices = [
     {
         name: cs119,
         current: [2.15, 2.25, 2.38, 4.12, 4.3, 4.5, 4.95],
-        idleCurrent: [0.45, 0.47, 0.5, 0.86, 0.9, 0.96, 1.04],
+        idleCurrent: [0.51, 0.5, 0.49, 0.47, 0.48, 0.49, 0.52],
         maxQuantity: [7, 6, 6, 4, 4, 4, 4],
         quantity: document.getElementById("cs119"),
         btuBox: document.getElementById("cs119-btu25"),
@@ -26,7 +26,7 @@ let csDevices = [
     {
         name: cs118,
         current: [1.25, 1.31, 1.38, 2.4, 2.5, 2.62, 2.88],
-        idleCurrent: [0.45, 0.47, 0.5, 0.86, 0.9, 0.96, 1.04],
+        idleCurrent: [0.51, 0.5, 0.49, 0.47, 0.48, 0.49, 0.52],
         maxQuantity: [11, 11, 10, 8, 8, 7, 6],
         quantity: document.getElementById("cs118"),
         btuBox: document.getElementById("cs118-btu25"),
@@ -38,7 +38,7 @@ let csDevices = [
     {
         name: cs7,
         current: [1.6, 1.68, 1.78, 3.1, 3.22, 3.36, 3.7],
-        idleCurrent: [0.45, 0.47, 0.5, 0.86, 0.9, 0.96, 1.04],
+        idleCurrent: [0.51, 0.5, 0.49, 0.47, 0.48, 0.49, 0.52],
         maxQuantity: [9, 8, 8, 6, 6, 5, 5],
         quantity: document.getElementById("cs7"),
         btuBox: document.getElementById("cs7-btu25"),
@@ -50,7 +50,7 @@ let csDevices = [
     {
         name: cs10,
         current: [1.6, 1.68, 1.78, 3.1, 3.22, 3.36, 3.7],
-        idleCurrent: [0.45, 0.47, 0.5, 0.86, 0.9, 0.96, 1.04],
+        idleCurrent: [0.51, 0.5, 0.49, 0.47, 0.48, 0.49, 0.52],
         maxQuantity: [9, 8, 8, 6, 6, 5, 5],
         quantity: document.getElementById("cs10"),
         rmsIdleBox: document.getElementById("cs10-rms-idle"),
@@ -63,7 +63,7 @@ let csDevices = [
     {
         name: cs7p,
         current: [1.6, 1.68, 1.78, 3.1, 3.22, 3.36, 3.7],
-        idleCurrent: [0.45, 0.47, 0.5, 0.86, 0.9, 0.96, 1.04],
+        idleCurrent: [0.51, 0.5, 0.49, 0.47, 0.48, 0.49, 0.52],
         maxQuantity: [9, 8, 8, 6, 6, 5, 5],
         quantity: document.getElementById("cs7p"),
         btuBox: document.getElementById("cs7p-btu25"),
@@ -75,7 +75,7 @@ let csDevices = [
     {
         name: cs10p,
         current: [1.6, 1.68, 1.78, 3.1, 3.22, 3.36, 3.7],
-        idleCurrent: [0.45, 0.47, 0.5, 0.86, 0.9, 0.96, 1.04],
+        idleCurrent: [0.51, 0.5, 0.49, 0.47, 0.48, 0.49, 0.52],
         maxQuantity: [9, 8, 8, 6, 6, 5, 5],
         quantity: document.getElementById("cs10p"),
         btuBox: document.getElementById("cs10p-btu25"),
@@ -87,14 +87,39 @@ let csDevices = [
     {
         name: vgt,
         current: [4.35, 4.55, 4.8, 8.3, 8.69, 9.1, 10],
-        idleCurrent: [0.45, 0.47, 0.5, 0.86, 0.9, 0.96, 1.04],
+        idleCurrent: [1, 0.95, 0.92, 0.85, 0.87, 0.9, 0.94],
         maxQuantity: [3, 3, 3, 2, 2, 2, 2],
         quantity: document.getElementById("vgt"),
         btuBox: document.getElementById("vgt-btu25"),
         btuMax: document.getElementById("vgt-btu"),
         rmsIdleBox: document.getElementById("vgt-rms-idle"),
         rmsLongTermBox: document.getElementById("vgt-rms-lt")
-    }]
+    },
+
+    {
+        name: vgs,
+        current: [3.7, 3.87, 4, 6.91, 7.21, 7.56, 8.35],
+        idleCurrent: [1, 0.95, 0.92, 0.85, 0.87, 0.9, 0.94],
+        maxQuantity: [4, 4, 4, 2, 2, 2, 2],
+        quantity: document.getElementById("vgs"),
+        btuBox: document.getElementById("vgs-btu25"),
+        btuMax: document.getElementById("vgs-btu"),
+        rmsIdleBox: document.getElementById("vgs-rms-idle"),
+        rmsLongTermBox: document.getElementById("vgs-rms-lt")
+    },
+
+    {
+        name: vgx,
+        current: [6.52, 6.8, 7.2, 12.5, 13, 13.63, 15],
+        idleCurrent: [1, 0.95, 0.92, 0.85, 0.87, 0.9, 0.94],
+        maxQuantity: [2, 2, 2, 1, 1, 1, 1],
+        quantity: document.getElementById("vgx"),
+        btuBox: document.getElementById("vgx-btu25"),
+        btuMax: document.getElementById("vgx-btu"),
+        rmsIdleBox: document.getElementById("vgx-rms-idle"),
+        rmsLongTermBox: document.getElementById("vgx-rms-lt")
+    }
+]
 
 //Voltage and Current Selector
 function setVoltage(v) {
@@ -109,7 +134,7 @@ setVoltage(0)
 
 //Clear Button
 function clearFields() {
-    for (let q = 0; q < 7; q++) {
+    for (let q = 0; q < 9; q++) {
         csDevices[q].quantity.value = 0
     }
     altBtuH()
@@ -118,7 +143,9 @@ function clearFields() {
 //Max Per Circuit
 function getMax() {
     maxPerCircuit.innerHTML = `
+        <td>${csDevices[8].maxQuantity[arraySelector]}</td>
         <td>${csDevices[6].maxQuantity[arraySelector]}</td>
+        <td>${csDevices[7].maxQuantity[arraySelector]}</td>
         <td>${csDevices[0].maxQuantity[arraySelector]}</td>
         <td>${csDevices[1].maxQuantity[arraySelector]}</td>
         <td>${csDevices[2].maxQuantity[arraySelector]}</td>
@@ -130,7 +157,7 @@ function getMax() {
 
 //Calculator
 function altBtuH() {
-    for (let b = 0; b < 7; b++) {
+    for (let b = 0; b < 9; b++) {
         let deviceCurrent = csDevices[b].current[arraySelector]
         let deviceQuantity = csDevices[b].quantity.value
         let deviceIdle = csDevices[b].idleCurrent[arraySelector]
@@ -158,7 +185,7 @@ function sum() {
     let totalBtuMax = 0
     let totalRmsIdle = 0
     let totalRmsLongTerm = 0
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 9; i++) {
         totalBtu += (+csDevices[i].btuBox.value)
         totalBtuMax += (+csDevices[i].btuMax.value)
         totalRmsIdle += (+csDevices[i].rmsIdleBox.value)

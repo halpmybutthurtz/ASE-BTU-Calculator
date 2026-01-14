@@ -38,10 +38,11 @@ body {
 }
 
 #logo {
-  height: 63%;
-  width: 75%;
-  margin-left: 10px;
-  margin-top: 23px;
+  height: 70px;
+  width: 70px;
+  margin-left: 0px;
+  padding-right: 5px;
+  margin-top: 45px;
 }
 
 .table {
