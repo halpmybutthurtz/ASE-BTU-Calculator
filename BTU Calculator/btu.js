@@ -110,8 +110,8 @@ let csDevices = [
 
     {
         name: vgx,
-        current: [6.52, 6.8, 7.2, 12.5, 13, 13.63, 15],
-        idleCurrent: [1, 0.95, 0.92, 0.85, 0.87, 0.9, 0.94],
+        current: [7.17, 7.5, 7.93, 13.75, 14.34, 15, 16.5],
+        idleCurrent: [1.08, 1.1, 1.12, 1.18, 1.22, 1.27, 1.32],
         maxQuantity: [2, 2, 2, 1, 1, 1, 1],
         quantity: document.getElementById("vgx"),
         btuBox: document.getElementById("vgx-btu25"),
